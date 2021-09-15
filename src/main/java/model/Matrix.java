@@ -14,6 +14,7 @@ public class Matrix {
     private HashMap<Double, double[]> eigenvectors;
 
     /**
+     * Constructor
      * @param data double[][] : Matriz de datos
      */
     public Matrix(double[][] data) {
@@ -23,9 +24,15 @@ public class Matrix {
         this.samples = copy.length;
         this.covarianceMatrix = Maths.calcCovarianceMatrix(this);
         this.eigenvalues = Maths.getEigenvalues(this.covarianceMatrix);
-        this.eigenvectors = Maths.getEigenvectors(this);
+        this.eigenvectors = Maths.getEigenvectors(this.covarianceMatrix);
     }
 
+    /**
+     * Obtiene el elemento en un fila y columna especifica
+     * @param row Fila del elemento
+     * @param column Columna del elemento
+     * @return double : Elemento en la fila y columna ingresados
+     */
     public double getElement(int row, int column) {
         return data[row][column];
     }
@@ -66,10 +73,16 @@ public class Matrix {
         }
     }
 
+    /**
+     * Imprime los valores propios de la matriz de covarianza
+     */
     public void printEigenvalues() {
         Arrays.stream(eigenvalues).forEach(System.out::println);
     }
 
+    /**
+     * Imprime los vectores propios de la matriz de covarianza
+     */
     public void printEigenvectors() {
             System.out.println("Valor Propio Asociado " + "Vector Propio");
         for (int i = 0; i < eigenvalues.length; i++) {
@@ -81,18 +94,35 @@ public class Matrix {
         }
     }
 
+    /**
+     * Getter
+     * @return double[][] : Matriz de covarianza
+     */
     public double[][] getCovarianceMatrix() {
         return covarianceMatrix;
     }
 
+    /**
+     * Getter
+     * @return int : Dimension de la matriz
+     */
     public int getDimension() {
         return dimension;
     }
 
+    /**
+     * Getter
+     * @return int : Muestras en cada columna de la matriz
+     */
     public int getSamples() {
         return samples;
     }
 
+    /**
+     * Recibe un array bidimensional y devuelve una copia del mismo
+     * @param array Array a copiar
+     * @return double[][] : Copia del array ingresado
+     */
     private double[][] copyTwoDimensionalArray(double[][] array) {
         int rows = array.length;
         int columns = array[0].length;
@@ -105,14 +135,27 @@ public class Matrix {
         return copy;
     }
 
+    /**
+     * Getter
+     * @return double[] : Valores propios de la matriz de covarianza
+     */
     public double[] getEigenvalues() {
         return eigenvalues;
     }
 
+    /**
+     * Getter
+     * @param eigenvalue Valor propio asociado al vector propio a obtener
+     * @return double[] : Vector propio de la matriz de covarianza asociado al valor propio ingresado
+     */
     public double[] getEigenvector(double eigenvalue) {
         return eigenvectors.get(eigenvalue);
     }
 
+    /**
+     * Getter
+     * @return HashMap<Double, double[]> : Vectores propios de la matriz de covarianza
+     */
     public HashMap<Double, double[]> getEigenvectors() {
         return eigenvectors;
     }

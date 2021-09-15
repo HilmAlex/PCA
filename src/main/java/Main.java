@@ -1,8 +1,4 @@
 import model.PCA;
-import model.util.Maths;
-
-import java.util.Arrays;
-import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) {
@@ -17,17 +13,17 @@ public class Main {
         pca.getData().print();
 
         System.out.println("\n\nDatos Centrados");
-        pca.getDataCenter().print();
+        pca.getNormalizedData().print();
 
 
         System.out.println("\n\nMatriz de covarianza de los datos centrados");
-        pca.getDataCenter().printCovarianceMatrix();
+        pca.getNormalizedData().printCovarianceMatrix();
 
         System.out.println("\n\nValores propios de los datos centrados");
-        pca.getDataCenter().printEigenvalues();
+        pca.getNormalizedData().printEigenvalues();
 
         System.out.println("\n\nVectores propios de los datos centrados");
-        pca.getDataCenter().printEigenvectors();
+        pca.getNormalizedData().printEigenvectors();
 
         System.out.println("\n\nDatos reducidos con la menor perdida de informacion");
         pca.printReducedData();

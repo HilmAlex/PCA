@@ -1,0 +1,46 @@
+@startuml
+class PCA{
+    Matrix data
+    Matrix normalizedData
+    double[] reducedData
+
+    reduce()
+    printReducedData()
+    getters()
+    setters()
+}
+
+class Math{
+    calcAverage()
+    normalizeVector()
+    normalizeData()
+    calcVariance()
+    calcCovariance()
+    calcCovarianceMatrix()
+    getEigenvalues()
+    getEigenvectors()
+    getUnitVector()
+}
+
+class Matrix{
+    double[][] data
+    int dimension
+    int samples
+    double[][] covarianceMatrix
+    double[] eigenvalues
+    HashMap<Double, double[]> eigenvectors
+
+    getElement()
+    getAxis()
+    print()
+    printCovarianceMatrix()
+    printEigenvalues()
+    printEigenvectors()
+    copyTwoDimensionalArray()
+    getters()
+    setters()
+}
+
+PCA --> Matrix
+
+@enduml
