@@ -5,6 +5,9 @@ import model.Matrix;
 import java.util.Arrays;
 import java.util.HashMap;
 
+/**
+ * La clase Maths tiene metodos estaticos para realizar operaciones con vectores y matrices.
+ */
 public class Maths {
 
     /**
@@ -147,7 +150,7 @@ public class Maths {
     /**
      * Obtiene los vectores propios de una matriz de varianza-covarianza
      * @param covarianceMatrix Matriz de varianza-covarianza a calcular los vectores propios
-     * @return HashMap<Double, double[]> : Hashmap, la clave es el valor propio y el valor es el vector propio asociado al valor propio
+     * @return HashMap(Double, double[]) : Hashmap, la clave es el valor propio y el valor es el vector propio asociado al valor propio
      */
     public static HashMap<Double, double[]> getEigenvectors(double[][] covarianceMatrix) {
         HashMap<Double, double[]> eigenvectors = new HashMap<Double, double[]>();

@@ -5,6 +5,10 @@ import java.util.HashMap;
 
 import model.util.Maths;
 
+/**
+ * La clase matriz almacena un array bidimensional de datos y tiene metodos para calcular su matriz de varianza-covarianza, tambien sus valores y vectores propios
+ * @see Maths
+ */
 public class Matrix {
     private double[][] data;
     private int dimension;
@@ -38,6 +42,7 @@ public class Matrix {
     }
 
     /**
+     * Obtiene una columna de la matriz segun el indice ingresado
      * @param position Posicion de la columna a obtener
      * @return double[] : Arreglo con los datos de la columna en la posicion indicada
      */
@@ -95,7 +100,7 @@ public class Matrix {
     }
 
     /**
-     * Getter
+     * Obtiene la matriz de covarianza
      * @return double[][] : Matriz de covarianza
      */
     public double[][] getCovarianceMatrix() {
@@ -103,7 +108,7 @@ public class Matrix {
     }
 
     /**
-     * Getter
+     * Obtiene la dimension de la matriz
      * @return int : Dimension de la matriz
      */
     public int getDimension() {
@@ -111,8 +116,8 @@ public class Matrix {
     }
 
     /**
-     * Getter
-     * @return int : Muestras en cada columna de la matriz
+     * Obtiene la cantidad de muestras de una columna de la matriz
+     * @return int : Muestras en una columna de la matriz
      */
     public int getSamples() {
         return samples;
@@ -136,7 +141,7 @@ public class Matrix {
     }
 
     /**
-     * Getter
+     * Obtiene valores propios de la matriz de covarianza
      * @return double[] : Valores propios de la matriz de covarianza
      */
     public double[] getEigenvalues() {
@@ -144,7 +149,7 @@ public class Matrix {
     }
 
     /**
-     * Getter
+     * Obtiene un valor propio de la matriz de covarianza a partir de su valor propio asociado
      * @param eigenvalue Valor propio asociado al vector propio a obtener
      * @return double[] : Vector propio de la matriz de covarianza asociado al valor propio ingresado
      */
@@ -153,8 +158,8 @@ public class Matrix {
     }
 
     /**
-     * Getter
-     * @return HashMap<Double, double[]> : Vectores propios de la matriz de covarianza
+     * Obtiene los vectores propios de la matriz de covarianza
+     * @return HashMap(Double, double[]) : Vectores propios de la matriz de covarianza
      */
     public HashMap<Double, double[]> getEigenvectors() {
         return eigenvectors;

@@ -4,6 +4,12 @@ import model.util.Maths;
 
 import java.util.Arrays;
 
+/**
+ * La clase PCA recibe en su metodo constructor datos iniciales para ser procesados a traves del algoritmo de Analisis de Componentes Principales
+ * con el objetivo de reducir las dimensiones del conjunto de datos reteniendo la mayor informacion posible.
+ * @see Matrix
+ * @see PCA
+ */
 public class PCA {
     private Matrix data;
     private Matrix normalizedData;
